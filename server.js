@@ -3,7 +3,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var knex = require('./db/knex');
 
-rt.exec()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
