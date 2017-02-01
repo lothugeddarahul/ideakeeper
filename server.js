@@ -1,4 +1,4 @@
-:waivar express = require('express');
+var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var knex = require('./db/knex');
