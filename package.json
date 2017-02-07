@@ -21,4 +21,13 @@
     "jasmine-node": "^1.14.5",
     "mocha": "^3.2.0"
   }
+    "express": "^4.14.0",
+    "knex": "^0.12.6",
+    "sqlite": "^2.2.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "request": "*"
+  }
 }
