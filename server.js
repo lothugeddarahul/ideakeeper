@@ -22,8 +22,6 @@ app.post('/ideas', function(req, res) {
 
 app.listen(3000, function(){
   console.log('Listening on Port 3000');
-<<<<<<< HEAD
+
 });
-=======
-});
->>>>>>> 8da7fc3c896b13ad7958cfac76321247ca2bcb24
+
