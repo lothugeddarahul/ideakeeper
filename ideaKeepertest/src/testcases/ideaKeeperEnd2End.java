@@ -42,7 +42,7 @@ public class ideaKeeperEnd2End {
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
 				List<WebElement> list = driver.findElements(By.id("list"));
 				Thread.sleep(1000);
-			    System.out.println("size is :"+list.size());
+             	            //System.out.println("size is :"+list.size());
 			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
 			    System.out.println("test passed due to submit button was enabled in ideakeepr application");
 			    }
