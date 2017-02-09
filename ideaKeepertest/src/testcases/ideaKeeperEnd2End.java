@@ -37,7 +37,7 @@ public class ideaKeeperEnd2End {
 	
 	@Test
 	public void shouldAcceptMoreThanFourtyCharcterStringAsAnIdea() throws InterruptedException {
-		String checkVal = "1234567890123456789012345678901234567890123456";
+		String checkVal = "01234567890123456789012345678901234567890123456";
 		        init();
 				driver.findElement(By.name("idea")).sendKeys(checkVal);
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
