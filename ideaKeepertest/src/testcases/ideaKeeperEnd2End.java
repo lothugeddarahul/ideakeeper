@@ -64,10 +64,11 @@ public class ideaKeeperEnd2End {
 		        init();
 				driver.findElement(By.name("idea")).sendKeys(checkVal);
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
-		        //setIdeaText(ideaText);
+          		        //setIdeaText(ideaText);
 				List<WebElement> list = driver.findElements(By.id("list"));
 				Thread.sleep(1000);
 			    System.out.println("size is :"+list.size());
+                            Thread.sleep(1000);
 			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
 			    System.out.println("Item Added");
 			    }
