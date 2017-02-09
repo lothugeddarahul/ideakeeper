@@ -57,6 +57,7 @@ public class ideaKeeperEnd2End {
 				List<WebElement> list = driver.findElements(By.id("list"));
 				Thread.sleep(1000);
 			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
+				Thread.sleep(500);
 			    System.out.println("Text added below");
 			    }
 	
