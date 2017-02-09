@@ -50,10 +50,8 @@ public class ideaKeeperEnd2End {
 	
 	@Test
 	public void shouldAcceptTextAddedBelowListAsAnIdea() throws InterruptedException {
-		String checkVal = "Text is added on below";
-		       System.setProperty("webdriver.chrome.driver", "/Users/solutionsiq/Downloads/chromedriver");
-		        WebDriver driver = new ChromeDriver();
-				driver.get("http://localhost:3000");
+		String checkVal = "Text is added on below in the list";
+		       init();
 				driver.findElement(By.name("idea")).sendKeys(checkVal);
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
 				List<WebElement> list = driver.findElements(By.id("list"));
