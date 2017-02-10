@@ -18,6 +18,7 @@ public class ideaKeeperEnd2End {
 			 driver = new ChromeDriver(); 
 			 driver.get("http://localhost:3000");
 			 Thread.sleep(1000);
+                         String[] list=new String[1000]; 
 		}
 		
 	}
