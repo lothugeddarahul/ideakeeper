@@ -1,4 +1,4 @@
-//package testcases;
+i//package testcases;
 
 import java.util.List;
 
@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-String[] list = new String[2000];
 
 public class ideaKeeperEnd2End {
 	WebDriver driver =  null;
