@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+String[] list = new String[2000];
 
 public class ideaKeeperEnd2End {
 	WebDriver driver =  null;
@@ -18,8 +19,7 @@ public class ideaKeeperEnd2End {
 			 driver = new ChromeDriver(); 
 			 driver.get("http://localhost:3000");
 			 Thread.sleep(1000);
-                         String[] list=new String[1000]; 
-		}
+                 	}
 		
 	}
     @Test
