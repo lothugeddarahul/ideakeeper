@@ -23,7 +23,7 @@ public class ideaKeeperEnd2End {
 	}
     @Test
 	public void shouldAcceptNullStringAsAnIdea() throws InterruptedException {
-		String checkVal = "";
+		String checkVal = " ";
 				init();
 				driver.findElement(By.name("idea")).sendKeys(checkVal);
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -31,8 +31,6 @@ public class ideaKeeperEnd2End {
      			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
 			    Thread.sleep(1000);
 			    System.out.println("Text added null value below");
-			    
-			    
 	}
 	
 	@Test
