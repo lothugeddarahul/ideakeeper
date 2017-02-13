@@ -1,4 +1,4 @@
-i//package testcases;
+//package testcases;
 
 import java.util.List;
 
@@ -11,83 +11,89 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class ideaKeeperEnd2End {
-	WebDriver driver =  null;
-	private void init() throws InterruptedException{
-		if(driver==null){
-			System.setProperty("webdriver.chrome.driver", "/Users/solutionsiq/Downloads/chromedriver");
-			 driver = new ChromeDriver(); 
-			 driver.get("http://localhost:3000");
-			 Thread.sleep(1000);
-                 	}
+
+	@Test
+	public void Should_Accepet_Null_As_String() {
+		String sendVal = " ";
+		System.setProperty("webdriver.chrome.driver", "/Users/solutionsiq/Downloads/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:3000");
+		driver.findElement(By.name("idea")).sendKeys(sendVal);
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		List<WebElement> list = driver.findElements(By.id("list"));
+		assertNull(sendVal);
+		System.out.println("size is :"+list.size());
+		System.out.println("empty string added because submit but always enabled in application");
 		
 	}
-    @Test
-	public void shouldAcceptNullStringAsAnIdea() throws InterruptedException {
-		String checkVal = " ";
-				init();
-				driver.findElement(By.name("idea")).sendKeys(checkVal);
-				driver.findElement(By.xpath("//button[@type='submit']")).click();
-				List<WebElement> list = driver.findElements(By.id("list"));
-     			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
-			    Thread.sleep(1000);
-			    System.out.println("Text added null value below");
+	private static void assertNull(String checkVal) {
+		// TODO Auto-generated method stub
+		
 	}
+
 	
 	@Test
-	public void shouldAcceptMoreThanFourtyCharcterStringAsAnIdea() throws InterruptedException {
-		String checkVal = "01234567890123456789012345678901234567890123456";
-		        init();
-				driver.findElement(By.name("idea")).sendKeys(checkVal);
+	public void Should_Accepet_MoreThan_Fourty_Charcters() {
+		String sendVal = "12345678901234567890123456789012345678901234";
+		System.setProperty("webdriver.chrome.driver", "/Users/solutionsiq/Downloads/chromedriver");
+		        WebDriver driver = new ChromeDriver();
+				driver.get("http://localhost:3000");
+				driver.findElement(By.name("idea")).sendKeys(sendVal);
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
 				List<WebElement> list = driver.findElements(By.id("list"));
-				Thread.sleep(1000);
-             	            //System.out.println("size is :"+list.size());
-			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
+			    System.out.println("size is :"+list.size());
+			    Assert.assertEquals(list.get(list.size()-1).getText(),sendVal);
 			    System.out.println("test passed due to submit button was enabled in ideakeepr application");
 			    }
 	
 	@Test
-	public void shouldAcceptTextAddedBelowListAsAnIdea() throws InterruptedException {
-		String checkVal = "Text is added on below in the list";
-		       init();
-				driver.findElement(By.name("idea")).sendKeys(checkVal);
+	public void Should_Accepet_Text_As_Below_In_List() {
+		String sendValue = "Text added below";
+		System.setProperty("webdriver.chrome.driver", "/Users/solutionsiq/Downloads/chromedriver");
+		        WebDriver driver = new ChromeDriver();
+				driver.get("http://localhost:3000");
+				driver.findElement(By.name("idea")).sendKeys(sendValue);
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
 				List<WebElement> list = driver.findElements(By.id("list"));
 			    System.out.println("text is :"+list.get(list.size()-1).getText());
-			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
-			    Thread.sleep(1000);
+			    Assert.assertEquals(list.get(list.size()-1).getText(),sendValue);
 			    System.out.println("Text added below");
 			    }
 	
 	@Test
-	public void shouldAcceptTextInTheListAsAnIdea() throws InterruptedException {
-		String checkVal = "added Text in the List";
-		        init();
-				driver.findElement(By.name("idea")).sendKeys(checkVal);
+	public void Should_Accepet_Text_As_Ideakeeper_List() {
+		String sendValue = "Text";
+		System.setProperty("webdriver.chrome.driver", "/Users/solutionsiq/Downloads/chromedriver");
+		        WebDriver driver = new ChromeDriver();
+				driver.get("http://localhost:3000");
+				driver.findElement(By.name("idea")).sendKeys(sendValue);
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
-		        //setIdeaText(ideaText);
 				List<WebElement> list = driver.findElements(By.id("list"));
-             		        System.out.println("size is :"+list.size());
-			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
-                            Thread.sleep(1000);
+			    System.out.println("size is :"+list.size());
+			    //System.out.println("text is :"+list.get(list.size()-1).getText());
+			    Assert.assertEquals(list.get(list.size()-1).getText(),sendValue);
 			    System.out.println("Item Added");
 			    }
-		
+	
 	@Test
-	public void shouldCheckSizesBeforeAndAftersendingList() throws InterruptedException{
-		String checkVal = "checking the sizes in list";
-		init();
-		List<WebElement> list = driver.findElements(By.id("list"));
-		System.out.println("size is :"+list.size());   
-		driver.findElement(By.name("idea")).sendKeys(checkVal);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		List<WebElement> list1 = driver.findElements(By.id("list"));
-		Thread.sleep(1000);
-		System.out.println("size is :"+list1.size());
-		boolean listsize = list.size() != list1.size();
-		Assert.assertTrue(listsize);
-		System.out.println("test passed for checking sizes");
-		System.out.println("checking the sizes of list and view in list");
-	}		
-}
+	public void Should_Accepet_Text_List_limit_In_Ideakeeper_List() {
+		String sendValue = "Make a cool app 7!";
+		System.setProperty("webdriver.chrome.driver", "/Users/solutionsiq/Downloads/chromedriver");
+		        WebDriver driver = new ChromeDriver();
+				driver.get("http://localhost:3000");
+				List<WebElement> list = driver.findElements(By.id("list"));
+				System.out.println("size is :"+list.size());   
+				driver.findElement(By.name("idea")).sendKeys(sendValue);
+				driver.findElement(By.xpath("//button[@type='submit']")).click();
+				List<WebElement> list1 = driver.findElements(By.id("list"));
+				System.out.println("size is :"+list1.size());
+				boolean listsize = list.size() != list1.size();
+				Assert.assertTrue(listsize);
+				System.out.println("test passed");
+				System.out.println("checking the sizes of list and view in list");
+		 }
+	 }
+	
+		
+		
 
