@@ -28,8 +28,8 @@ public class ideaKeeperEnd2End {
 				driver.findElement(By.name("idea")).sendKeys(checkVal);
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
 				List<WebElement> list = driver.findElements(By.id("list"));
-     				Thread.sleep(1000);
-			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
+     			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
+			    Thread.sleep(1000);
 			    System.out.println("Text added null value below");
 			    
 			    
@@ -56,8 +56,8 @@ public class ideaKeeperEnd2End {
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
 				List<WebElement> list = driver.findElements(By.id("list"));
 			    System.out.println("text is :"+list.get(list.size()-1).getText());
-			    Thread.sleep(1000);
 			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
+			    Thread.sleep(1000);
 			    System.out.println("Text added below");
 			    }
 	
@@ -69,9 +69,9 @@ public class ideaKeeperEnd2End {
 				driver.findElement(By.xpath("//button[@type='submit']")).click();
 		        //setIdeaText(ideaText);
 				List<WebElement> list = driver.findElements(By.id("list"));
-				Thread.sleep(1000);
-			    System.out.println("size is :"+list.size());
+             		        System.out.println("size is :"+list.size());
 			    Assert.assertEquals(list.get(list.size()-1).getText(),checkVal);
+                            Thread.sleep(1000);
 			    System.out.println("Item Added");
 			    }
 		
