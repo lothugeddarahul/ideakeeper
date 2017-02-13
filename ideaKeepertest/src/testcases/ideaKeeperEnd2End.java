@@ -21,16 +21,11 @@ public class ideaKeeperEnd2End {
 		driver.findElement(By.name("idea")).sendKeys(sendVal);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		List<WebElement> list = driver.findElements(By.id("list"));
-		assertNull(sendVal);
 		System.out.println("size is :"+list.size());
 		System.out.println("empty string added because submit but always enabled in application");
 		
 	}
-	private static void assertNull(String checkVal) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	
 	@Test
 	public void Should_Accepet_MoreThan_Fourty_Charcters() {
