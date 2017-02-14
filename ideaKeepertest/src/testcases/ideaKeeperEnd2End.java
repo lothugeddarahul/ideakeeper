@@ -67,7 +67,7 @@ public class ideaKeeperEnd2End {
 			    System.out.println("size is :"+list.size());
 			    //System.out.println("text is :"+list.get(list.size()-1).getText());
 			    Assert.assertEquals(list.get(list.size()-1).getText(),sendValue);
-			    System.out.println("Item Added");
+			    System.out.println("Item Added in list");
 			    }
 	
 	@Test
